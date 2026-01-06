@@ -1,0 +1,154 @@
+/* =====================
+   ROOT & GLOBAL STYLE
+===================== */
+:root {
+  --primary: #ff7ab6;
+  --secondary: #6f7cff;
+  --accent: #ffb703;
+  --dark: #1e1e2f;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4, #a18cd1);
+  background-size: 300% 300%;
+  animation: gradientMove 15s ease infinite;
+  color: #222;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =====================
+   GLASSMORPHISM
+===================== */
+.navbar-glass,
+.footer-glass,
+.card,
+.feature-card,
+.service-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 10px;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-weight: 500;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+  color: var(--accent);
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero-section {
+  padding: 100px 0 80px;
+  color: #fff;
+}
+
+.hero-section h1,
+.hero-section p {
+  text-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+
+.hero-illustration {
+  background: rgba(255,255,255,.25);
+  border-radius: 24px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn-accent {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+}
+
+.btn-accent:hover {
+  opacity: 0.9;
+}
+
+/* =====================
+   CARDS & SECTIONS
+===================== */
+.card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+}
+
+.feature-card img,
+.service-card img {
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.2));
+}
+
+/* =====================
+   GALLERY
+===================== */
+.gallery-thumb img {
+  transition: transform .4s ease;
+}
+
+.gallery-thumb:hover img {
+  transform: scale(1.08);
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer-glass {
+  color: #fff;
+  margin-top: 80px;
+}
+
+/* =====================
+   UTILITIES
+===================== */
+.my-6 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+/* Form */
+input, textarea {
+  border-radius: 12px !important;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 70px 0;
+  }
+}
